@@ -4,7 +4,7 @@ class AppFooter extends Component {
     render(){
         return(
             <div id="footer">
-                <p>Antal: <span className="MyRed">15</span> </p>
+                <p>Antal: <span className="MyRed"> </span> </p>
             </div>
         )
     }

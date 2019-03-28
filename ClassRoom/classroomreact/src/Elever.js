@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 class Elever extends Component{
   
+  
   render(){
     const { elever } = this.props;
     const elevList = elever.map(elev => { 
@@ -15,6 +16,7 @@ class Elever extends Component{
       };
 
       return (
+        
         <div className="personcontainer" key={elev.id}>
           <h2>{elev.name}</h2>
           <div class="personpic">
@@ -22,6 +24,7 @@ class Elever extends Component{
           </div>
           <div>Age: { elev.age }</div>
           <div>Color: { elev.color } <div style={divStyle}></div> </div>
+          <div>antal: {elever.map} </div>
           
           
         </div>
