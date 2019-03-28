@@ -1,0 +1,582 @@
+*{margin: 0; padding: 0;}
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+
+#gridlayout{
+
+    width: 100%;
+    
+
+    display:grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+}
+header{
+    background-color:purple;
+    opacity: 0.8;
+    width: 100%;
+    height:70px;
+    grid-column: 1 /-1;
+    grid-row: 1/2;
+    position:sticky;
+    top:0;
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 
+
+}
+header #searchbar{
+    margin: 10px;
+    grid-column: 7/8;
+    grid-row: 1/2   ;
+    line-height: 10px;
+  
+    
+}
+header #search{
+    background-color: rgb(159, 39, 175);
+    border: 1px solid rgb(255, 0, 200);
+    width: 200px;
+    height: 25px;
+}
+header #knap{
+    background-color:black;
+    color: wheat;
+    border: 1px solid black;
+    width: 100px;
+    height: 29px;
+}
+
+.skylineimg{
+    grid-column: 1/-1;
+    grid-row: 1/3;
+    margin-top: 50px;
+    width:100%;
+    height: 100%;
+object-fit: contain;
+}
+
+
+    
+
+
+.logo img{
+    width: 35%;
+    height: 100%;
+    
+}
+
+
+nav{
+    margin: 10px;
+    grid-column: 3/6;
+    grid-row: 1/2;
+    line-height: 25px;
+    
+  
+
+}
+nav ul{
+display:flex;
+justify-content: space-between;
+list-style-type: none;
+}
+nav ul li{
+
+}
+nav ul li a{
+color:black; 
+text-decoration: none;
+
+font-family: 'Raleway', sans-serif;
+font-weight: 300;    
+font-size: 1em;
+
+}
+nav ul li a:hover{
+border-bottom: 2px solid black;
+color:rgb(0, 255, 255);
+
+}
+
+
+main{
+    
+    background-color: whitesmoke;
+
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+}
+main section{
+    width:100%;
+   
+   
+    display: grid;
+}
+#home{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.homeimg{
+    
+grid-column:1/5;
+grid-row:3/6;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: top;
+}
+#home .infobox{
+    grid-column: 5/-1;
+    grid-row: 3/-1;
+    background-color: black;
+}
+.infobox a{
+    color: #1882b3;
+    font-size: 1em;
+}
+.fontcolorlink a{
+color: rgb(84, 50, 205);
+}
+
+
+.infobox p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 2px;    
+    font-size: 2em;
+    text-align: right;
+   color: aliceblue;    
+   text-transform: uppercase; 
+   padding: 4px;
+}
+.infobox p{
+    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 1px;    
+    font-size: 0.9em;
+    text-align: left;
+   color: aliceblue;
+   line-height: 100%;
+   text-transform: none;
+}
+
+.infobox2{
+    grid-column: 1/3;
+    grid-row: 3/6;
+    padding: 50px;
+    background-color: black;
+    opacity: 0.4;
+}
+.infobox2 h2{
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: 20px;    
+    font-size: 1em;
+   color: aliceblue;
+   text-transform: none;
+}
+
+#hotel{
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: black;
+}
+.infohotel1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+   padding: 10px;
+   text-align: left;
+}
+.infohotel1 h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 20px;    
+    font-size: 1em;
+  
+   color: aliceblue;
+  
+   text-transform: lowercase;
+}
+.infohotel2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+   padding: 10px;
+}
+.infohotel2 h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 20px;    
+    font-size: 1em;
+  
+   color: aliceblue;
+  
+   text-transform: lowercase;
+}
+.infohotel3 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+   padding: 10px;
+}
+.infohotel3 h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 20px;    
+    font-size: 1em;
+  
+   color: aliceblue;
+  
+   text-transform: lowercase;
+}
+
+
+.hotel1{
+    height: 100%;
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    object-fit: cover;
+}
+.hotel2{
+    height: 100%;
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    object-fit: cover;  
+}
+.hotel3{
+    height: 100%;
+    width: 100%;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    object-fit: cover;  
+}
+.hotel11{
+    height:100%;
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 3/-1;
+    object-fit: cover;
+}
+.hotel22{
+    height: 100%;
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 3/-1;
+    object-fit: cover;  
+}
+.hotel33{
+    height: 100%;
+    width: 100%;
+    grid-column: 3/4;
+    grid-row: 3/-1;
+    object-fit: cover;  
+}
+
+.infoboxhotel{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    height: 1%;
+}
+.infoboxhotel h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 20px;    
+    font-size: 4em;
+    text-align: center;
+   color: aliceblue;
+   line-height: 15%;
+    
+}
+.fontcolor1{
+    color: aqua;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.fontcolor2{
+    color: blue;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+}
+.price1{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+
+#event{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+#event img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.eventimg1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background-color: #45a049;
+    
+}
+.eventimg2{
+    
+    
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: #45a098;
+}
+.eventimg3{
+    grid-column: 2/4;
+    grid-row: 1/2;
+    background-color: #000000;
+}
+.eventimg3 p{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #f2f2f2;
+    text-align: left;
+    font-size: 1.9em;
+}
+.eventimg4{
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: #a04577;
+}
+.eventimg5{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background-color: #454ea0;
+}
+.eventimg6{
+   
+   object-fit: cover;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: #45a063;
+}
+.eventimg7{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: #070505;
+}
+.eventimg7 p{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #f2f2f2;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.eventimg9{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: #06b6ec;
+}
+.eventimg10{
+    
+    grid-column: 1/-1;
+    grid-row: 4/5;
+    background-color: #000000;
+}
+.eventimg10 p{
+    margin-left: 20px;
+    margin-top: 20px;
+    color: #f2f2f2;
+    text-align: left;
+    font-size: 1.6em;
+}
+p.fontcolor3{
+    margin-top: 10%;
+    margin-left: 30%;
+    color: #bbff00;
+   font-size: 2em;
+   
+}
+p.fontcolor4{
+
+    margin-left: 30%;
+    color: #bbff00;
+   font-size: 2em;
+   
+}
+p.fontcolor5{
+
+   
+    color: #00d9ff;
+   font-size: 2em;
+   
+}
+p.fontcolor6{
+
+   text-align: left;
+   color: #bbff00;
+   font-size: 2em;
+   
+}
+.fontcolor6 a{
+    color: #ffffff;
+ }
+ p.fontcolor7{
+    margin-top: 60px;
+    text-align: center;
+    color: #eeff00;
+    
+    font-size: 4em;
+    
+ }
+ 
+
+#eventsec2{
+    background-color: #00d9ff;
+}
+
+
+#eventsec3{
+    
+    background-color: #a02e2e;
+ 
+}
+#deal{
+    background-image: url(/img/par_eiffel_1400x650.jpg);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    background-color: rgb(129, 206, 29);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#deal img{
+    width: 65%;
+    height: 100%;
+    object-fit: contain;
+}
+.deal1left p{
+    color: #ffffff;
+    font-size: 2em;
+}
+.deal1left{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    
+    background-color:black;
+    
+}
+.deal1right{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    
+    
+}
+.deal1mid{
+    object-fit: cover;
+   
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.deal2left p{
+    color: #ffffff;
+    font-size: 2em;
+}
+.deal2left{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    
+    background-color: black;
+}
+.deal2right{
+    grid-column: 3/4;
+    grid-row: 3/4;
+    
+   
+}
+.deal2mid{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    
+}
+.deal3left p{
+    color: #ffffff;
+    font-size: 1.7em;
+}
+.deal3left{
+    grid-column: 1/2;
+    grid-row: 5/6;
+    
+    background-color: black;
+}
+.deal3right{
+    grid-column: 3/4;
+    grid-row: 5/6;
+   
+}
+.deal3mid{
+    grid-column: 2/3;
+    grid-row: 5/6;
+    
+}
+.zoom {
+    padding: 2px;
+    
+    transition: transform .2s;
+  
+    margin: 0 auto;
+  }
+  
+.zoom:hover {
+
+    transform: scale(2.5); 
+  }
+
+         
+
+  
+
+
+#form_container{
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    background-image: url(/img/Paris_-_France26__April_2014-06-36-49_jpg_2048x.jpg);
+    height: 100%;
+    width: 1519px;
+    
+    }
+.form_description{
+color: white; 
+font-family: 'Raleway', sans-serif;
+}  
+#li_1 .description{
+    
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif; 
+} 
+#li_3 .description{
+    color:#ffffff; 
+    font-family: 'Raleway', sans-serif;
+}
+#li_4    .description{
+    color:#ffffff; 
+    font-family: 'Raleway', sans-serif;
+}
+#li_5 .description{
+    color:#ffffff; 
+    font-family: 'Raleway', sans-serif;
+}
+#li_6 .description{
+    color:#ffffff;
+    font-family: 'Raleway', sans-serif; 
+}     
+ 
+
+.infofoot{
+    font-size: 2em;
+    color: #ffffff;
+    
+}
+
+
+
+ 

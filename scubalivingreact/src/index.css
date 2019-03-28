@@ -1,0 +1,390 @@
+#gridlayout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  font-family: 'Oswald', sans-serif;
+}
+
+header {
+  background-color: whitesmoke;
+  max-height: 60px;
+  grid-column: 1 / -1;
+  grid-row: 1/2;
+  position: sticky;
+  top: 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+header #searchbar {
+  grid-column: 7/9;
+  grid-row: 1/2;
+  line-height: 50px;
+}
+header #search {
+  background-color: lightgrey;
+  border: 1px solid rgb(255, 255, 255);
+  width: 200px;
+  height: 25px;
+}
+header #imglock {
+  height: 25px;
+  width: 25px;
+  grid-column: 8/9;
+  grid-row: 1/2;
+}
+header #login {
+  border: 1px solid whitesmoke;
+  margin-top: 0px;
+  grid-column: 9/10;
+  grid-row: 1/2;
+  background-color: lightgray;
+  color: black;
+  width: 50px;
+  height: 25px;
+}
+header #knap {
+  background-color: whitesmoke;
+  color: rgb(0, 0, 0);
+  border: 1px solid black;
+  width: 100px;
+  height: 29px;
+}
+.logo {
+  grid-column: 1/3;
+  grid-row: 1/2;
+
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+}
+.logo img {
+  width: 100%;
+  height: 50%;
+}
+
+nav {
+  grid-column: 3/6;
+  grid-row: 1/2;
+  line-height: 30px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1em;
+}
+nav ul a:hover {
+  color: rgb(161, 112, 21);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* MAIN */
+
+main {
+  background-color: rgb(255, 255, 255);
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+main section {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+}
+#home {
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+#home img {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  width: 100%;
+  height: 90%;
+  object-fit: fill;
+  object-position: top;
+}
+#home .infobox {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  margin-top: 100px;
+  padding-top: 40px;
+  background-color: rgba(0, 0, 0, 0.34);
+  text-align: center;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* SHOP */
+#udstyr {
+  grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
+  grid-template-rows: 100px 1fr 1fr;
+}
+
+#udstyr .infobox {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: rgb(0, 0, 0);
+}
+#udstyr .infobox2 {
+  grid-column: 4/6;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: lightgray;
+}
+#udstyr .udstyrtext {
+  color: white;
+  padding-left: 50px;
+  margin-top: 13px;
+  text-transform: uppercase;
+}
+#udstyr img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+#udstyr #img1div {
+  margin: 50px;
+  border: 1px solid rgb(114, 114, 114);
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#udstyr #img2div {
+  margin: 50px;
+  border: 1px solid rgb(114, 114, 114);
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#udstyr #img3div {
+  margin: 50px;
+  border: 1px solid rgb(114, 114, 114);
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+#udstyr #img4div {
+  margin: 50px;
+  border: 1px solid rgb(114, 114, 114);
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
+
+#udstyr #img1div {
+  text-align: center;
+}
+
+#udstyr #img1div #text {
+  color: lightgrey;
+  text-transform: uppercase;
+  text-align: center;
+}
+#udstyr #img1div #textpris {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  text-align: center;
+}
+/* ------ */
+#udstyr #img2div {
+  text-align: center;
+}
+
+#udstyr #img2div #text {
+  color: lightgrey;
+  text-transform: uppercase;
+  text-align: center;
+}
+#udstyr #img2div #textpris {
+  color: rgb(141, 60, 60);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ----------- */
+#udstyr #img3div {
+  text-align: center;
+}
+#udstyr #img3div #text {
+  color: lightgrey;
+  text-transform: uppercase;
+  text-align: center;
+}
+#udstyr #img3div #textpris {
+  color: rgb(141, 60, 60);
+  text-transform: uppercase;
+  text-align: center;
+}
+/* --------- */
+#udstyr #img4div {
+  text-align: center;
+}
+#udstyr #img4div #text {
+  color: lightgrey;
+  text-transform: uppercase;
+  text-align: center;
+}
+#udstyr #img4div #textpris {
+  color: rgb(141, 60, 60);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#udstyr #linkshop {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  margin-top: 75px;
+}
+
+#udstyr #linkshop a {
+    
+  color: black;
+  font-size: 3em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* rejser */
+#rejser {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
+  grid-template-rows: 100px 1fr 1fr 100px;
+}
+#rejser img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#rejser .rejsetext {
+  color: white;
+  padding-left: 50px;
+  margin-top: 13px;
+  text-transform: uppercase;
+}
+#rejser .infobox {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: rgb(0, 0, 0);
+}
+#rejser .infobox2 {
+  grid-column: 4/6;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: lightgray;
+}
+#rejser #rejs1 {
+  padding: 40px green;
+  border: 50px solid white;
+  grid-column: 2/4;
+  grid-row: 2/3;
+  height: 50%;
+  object-fit: contain;
+}
+#rejser #rejs2 {
+  border: 50px solid white;
+  grid-column: 4/6;
+  grid-row: 2/3;
+  height: 50%;
+  object-fit: contain;
+}
+#rejser .rejseinfo1 {
+  padding: 35px;
+  color: aliceblue;
+  grid-column: 3/4;
+  grid-row: 3/4;
+  background-color: rgb(0, 0, 0);
+}
+#rejser .rejseinfo2 {
+  padding: 35px;
+  color: white;
+  grid-column: 3/4;
+  grid-row: 3/4;
+  background-color: rgb(0, 0, 0);
+}
+#rejser .Capstxt {
+  font-size: 3em;
+  text-transform: uppercase;
+  color: aliceblue;
+  
+}
+#rejser #linkrejse {
+    grid-column: 3/5;
+    grid-row: 3/4;
+   margin-top: -100px;
+  }
+  
+  #rejser #linkrejse a {
+      
+    color: black;
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+
+
+/* ---------------------------------------------------------------------------------------------------------- */
+/* kurser */
+#kurser {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
+  grid-template-rows: 100px 1fr 1fr 100px;
+}
+
+#kurser img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#kurser #padi {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  
+}
+
+#kurser .kursustext {
+  color: white;
+  padding-left: 50px;
+  margin-top: 13px;
+  text-transform: uppercase;
+}
+#kurser .infobox {
+  grid-column: 2/4;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: rgb(0, 0, 0);
+}
+#kurser .infobox2 {
+  grid-column: 4/6;
+  grid-row: 1/2;
+  margin-top: 50px;
+  background-color: lightgray;
+}
+#kurser #linkkursus {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  align-self: center;
+}
+
+#kurser #linkkursus a {
+  color: black;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
