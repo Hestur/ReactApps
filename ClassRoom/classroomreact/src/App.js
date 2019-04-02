@@ -34,8 +34,8 @@ class App extends Component {
     return (
       <div className="content">
         <Elever elever={this.state.elever} />
-      <AppFooter />
-       
+      <AppFooter number={this.state.elever.length}/>
+      
       </div>
     );
   }

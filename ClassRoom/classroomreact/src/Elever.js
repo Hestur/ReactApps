@@ -6,6 +6,7 @@ class Elever extends Component{
   
   
   render(){
+    
     const { elever } = this.props;
     const elevList = elever.map(elev => { 
       var divStyle = {
@@ -14,6 +15,7 @@ class Elever extends Component{
         padding: "10px",
         
       };
+      
 
       return (
         
@@ -24,9 +26,6 @@ class Elever extends Component{
           </div>
           <div>Age: { elev.age }</div>
           <div>Color: { elev.color } <div style={divStyle}></div> </div>
-          <div>antal: {elever.map} </div>
-          
-          
         </div>
         
       )
