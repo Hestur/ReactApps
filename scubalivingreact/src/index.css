@@ -1,10 +1,14 @@
-#gridlayout {
+* {
+  margin: 0;
+  padding: 0;
+  }
+.gridlayout {
   width: 100%;
 
   display: grid;
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -115,7 +119,7 @@ main section {
   object-fit: fill;
   object-position: top;
 }
-#home .infobox {
+.infoboxmain {
   grid-column: 2/3;
   grid-row: 3/4;
   margin-top: 100px;
@@ -131,15 +135,16 @@ main section {
 #udstyr {
   grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
   grid-template-rows: 100px 1fr 1fr;
+  height: 80vh;
 }
 
-#udstyr .infobox {
+.infoboxudstyr {
   grid-column: 2/4;
   grid-row: 1/2;
   margin-top: 50px;
   background-color: rgb(0, 0, 0);
 }
-#udstyr .infobox2 {
+.infobox2 {
   grid-column: 4/6;
   grid-row: 1/2;
   margin-top: 50px;
@@ -243,13 +248,14 @@ main section {
 #udstyr #linkshop {
   grid-column: 3/5;
   grid-row: 3/4;
-  margin-top: 75px;
+  padding: 50px;
+  text-align: center;
 }
 
 #udstyr #linkshop a {
-    
+  padding: 50px;
   color: black;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
@@ -265,6 +271,7 @@ main section {
   height: 100%;
   width: 100%;
   object-fit: cover;
+
 }
 #rejser .rejsetext {
   color: white;
@@ -272,18 +279,13 @@ main section {
   margin-top: 13px;
   text-transform: uppercase;
 }
-#rejser .infobox {
+#rejser .infoboxrejser {
   grid-column: 2/4;
   grid-row: 1/2;
   margin-top: 50px;
   background-color: rgb(0, 0, 0);
 }
-#rejser .infobox2 {
-  grid-column: 4/6;
-  grid-row: 1/2;
-  margin-top: 50px;
-  background-color: lightgray;
-}
+
 #rejser #rejs1 {
   padding: 40px green;
   border: 50px solid white;
@@ -323,12 +325,15 @@ main section {
     grid-column: 3/5;
     grid-row: 3/4;
    margin-top: -100px;
+   font-size: 2em;
+   padding: 50px;
+   text-align: center;
   }
   
   #rejser #linkrejse a {
       
     color: black;
-    font-size: 3em;
+    padding: 50px;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
@@ -343,20 +348,40 @@ main section {
   grid-template-columns: 100px 1fr 1fr 1fr 1fr 100px;
   grid-template-rows: 100px 1fr 1fr 100px;
 }
-
-#kurser img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.certificat {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 10px;
+  border: 10px solid black;
+  grid-column: 2/6;
+  grid-row: 2/3;
 }
 
-#kurser #padi {
-  grid-column: 2/4;
-  grid-row: 2/3;
-  width: 100%;
-  height: 100%;
+.padiText {
+padding: 155px 20px 20px 100px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+ 
+}
+.padiText p{ 
   
 }
+
+.padiText h2{ 
+  color: grey;
+  text-transform: uppercase;
+}
+
+.padi {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  padding: 20px 20px 20px 100px;
+  width: 60%;
+  object-fit: cover;
+
+}
+
 
 #kurser .kursustext {
   color: white;
@@ -364,19 +389,16 @@ main section {
   margin-top: 13px;
   text-transform: uppercase;
 }
-#kurser .infobox {
+#kurser .infoboxkurser {
   grid-column: 2/4;
   grid-row: 1/2;
   margin-top: 50px;
   background-color: rgb(0, 0, 0);
 }
-#kurser .infobox2 {
-  grid-column: 4/6;
-  grid-row: 1/2;
-  margin-top: 50px;
-  background-color: lightgray;
-}
+
+
 #kurser #linkkursus {
+  padding: 50px;
   grid-column: 3/5;
   grid-row: 3/4;
   align-self: center;
@@ -387,4 +409,70 @@ main section {
   font-size: 2em;
   text-transform: uppercase;
   text-decoration: none;
+  padding: 50px;
+  text-align: center;
 }
+
+
+
+/* Footer------------------------ */
+
+footer{
+  grid-column: 1/-1;
+}
+.footerbox{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+background-color: black;
+}
+.praktiskinfo{
+  list-style: square;
+  margin: 20px;
+  color: aliceblue;
+grid-column: 2/3;
+
+}
+.praktiskinfo h4{
+  font-size: 1.5rem;
+}
+
+.sociale{
+  color: aliceblue;
+  margin: 20px;
+grid-column: 3/-1;
+}
+.sociale h4{
+  font-size: 1.5rem;
+}
+
+
+/* Kontakt---------------------------- */
+.kontakt{
+background-color: whitesmoke;
+
+}
+.åbningstider{
+  line-height: 5rem;
+  padding: 100px;
+margin: 50px;
+font-size: 1.6rem;
+grid-row: 2/3;
+grid-column: 3/4;
+}
+.adresse{
+  padding: 100px;
+margin: 50px;
+grid-row: 2/3;
+grid-column: 1/2;
+font-size: 1.6rem;
+}
+.links{
+  line-height: 10rem;
+  padding: 100px;
+  font-size: 2.5rem;
+  margin: 50px;
+  grid-row: 2/3;
+grid-column: 2/3;
+}
+
