@@ -1,13 +1,10 @@
 {
-  "name": "scubalivingreact",
+  "name": "newsapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "giphy-js-sdk-core": "^1.0.6",
-    "google-map-react": "^1.1.4",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-player": "^1.10.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
   },
   "scripts": {

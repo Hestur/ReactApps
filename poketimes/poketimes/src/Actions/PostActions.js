@@ -1,4 +1,4 @@
-export const deletePost = (id) => {
+xexport const deletePost = (id) => {
     return {
         type: 'DELETE_POST',
         id
