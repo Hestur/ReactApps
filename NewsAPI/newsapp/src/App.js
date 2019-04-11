@@ -5,7 +5,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
 import FooterCom from './components/FooterCom';
-import Post from './components/Post';
+// import Post from './components/Post';
 
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/:post_id" component={Post} />
+          {/* <Route path="/:post_id" component={Post} /> */}
           </Switch>
           <FooterCom>
           </FooterCom>

@@ -3,14 +3,28 @@ import axios from 'axios'
 
 class Home extends Component {
   state = {
-    posts: [ ]
+    posts: [ ],
+    search: 'putin'
   }
+  handleChange = (e) => {
+    this.setState({
+       search: e.target.value,
+      })
+      
+}
+handleSubmit = (e) =>{
+    e.preventDefault();
+    console.log(this.state)
+   
+    
+}
+
   componentDidMount(){
     
-    const ApiKey = '?api-key=a97743b3-7b55-4c13-97c3-9445577a4bd9'
-    axios.get('https://content.guardianapis.com/search'+ApiKey)
+    const ApiKey = '&api-key=a97743b3-7b55-4c13-97c3-9445577a4bd9'
+    axios.get('https://content.guardianapis.com/search?q=' + '' + ApiKey)
     .then(res => {
-      console.log(res)
+       console.log(res)
       this.setState({
         posts: res.data.response.results
       })
@@ -37,6 +51,16 @@ class Home extends Component {
     return (
       <div className="container">
         <h4 className="center">Home</h4>
+        <form onSubmit={this.handleSubmit} className="white">
+            <h5 className="grey-text text-darken-3">Search</h5>
+            <div className="input-field">
+                <label htmlFor="search"></label>
+                <input type="text" id="search" onChange={this.handleChange} />
+            </div>
+            <div className="input-field">
+                <button className="btn pink lighten-1 z-depth-0">Search</button>
+            </div>
+        </form>
           {postList}
       </div>
     );
