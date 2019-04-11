@@ -24,7 +24,6 @@ handleSubmit = (e) =>{
     const ApiKey = '&api-key=a97743b3-7b55-4c13-97c3-9445577a4bd9'
     axios.get('https://content.guardianapis.com/search?q=' + '' + ApiKey)
     .then(res => {
-       console.log(res)
       this.setState({
         posts: res.data.response.results
       })
@@ -55,7 +54,7 @@ handleSubmit = (e) =>{
             <h5 className="grey-text text-darken-3">Search</h5>
             <div className="input-field">
                 <label htmlFor="search"></label>
-                <input type="text" id="search" onChange={this.handleChange} />
+                <input type="text" id="search" onChange={this.handleChange.bind(this)} />
             </div>
             <div className="input-field">
                 <button className="btn pink lighten-1 z-depth-0">Search</button>
