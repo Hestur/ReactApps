@@ -3,6 +3,7 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import Soeg from "./Soeg";
 
+
 export default class Home extends Component {
   state = {
     films: [],
@@ -10,7 +11,7 @@ export default class Home extends Component {
   };
 
   InputFromSearch = data => {
-    console.log("data er her:", data);
+   // console.log("data er her:", data);
     this.setState({
       SW: data
     });
@@ -29,16 +30,17 @@ export default class Home extends Component {
         if (res.data.Search) {
           this.setState({
             films: res.data.Search
-          });
+          })
         }
-      });
-  };
+      })
+  }
+
 
   componentDidMount() {
-    this.hent();
+    this.hent()
   }
   componentDidUpdate() {
-    this.hent();
+    this.hent()
   }
 
   render() {
@@ -50,8 +52,7 @@ export default class Home extends Component {
           <div className="post card" key={films.imdbID}>
             <div className="card-content">
               <span className="card-title">
-                <h5>Title: {films.Title}</h5>
-              </span>
+                <h5>Title: {films.Title}</h5></span>
               <span className="card-title">Premiere year: {films.Year}</span>
               <img src={films.Poster} alt={"Poster for " + films.Title} />
             </div>
