@@ -13,7 +13,7 @@ export default class CreateTodo extends Component {
       todo_description: "",
       todo_responsible: "",
       todo_priority: "",
-      todo_completeted: false
+      todo_completed: false
     };
   }
   onChangeTodoDescription(e) {
@@ -45,7 +45,7 @@ export default class CreateTodo extends Component {
       todo_description: "",
       todo_responsible: "",
       todo_priority: "",
-      todo_completeted: false
+      todo_completed: false
     });
   }
 
