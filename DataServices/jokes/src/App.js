@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import CreateTodo from "./components/CreateTodos";
-import EditTodo from "./components/EditTodo";
-import TodosList from "./components/TodoList";
-
+import CreateJoke from './components/CreateJoke';
+import EditJoke from './components/EditJoke';
+import JokeList from './components/JokeList'; 
 import logo from "./logo.png";
+
 
 class App extends Component {
   render() {
@@ -31,9 +31,9 @@ class App extends Component {
             </div>
           </nav>
 
-          <Route path="/" exact component={TodosList} />
-          <Route path="/edit/:id" component={EditTodo} />
-          <Route path="/create" component={CreateTodo} />
+          <Route path="/" exact component={JokeList} />
+          <Route path="/edit/:id" component={EditJoke} />
+          <Route path="/create" component={CreateJoke} />
         </div>
       </Router>
     );
