@@ -48,7 +48,7 @@ todoRoutes.route('/add').post(function(req, res){
     });
 });
 
-todoRoutes.route('/update/:id').post(function(req, res) {
+todoRoutes.route('/update/:id').put(function(req, res) {
     Todo.findById(req.params.id, function(err, todo){
         if (!todo)
         res.status(404).send('Data is not found');
@@ -66,6 +66,22 @@ todoRoutes.route('/update/:id').post(function(req, res) {
         });
     })
 })
+
+todoRoutes.route("/delete/:id").delete(function(req, res) {
+
+    Todo.deleteOne({_id: req.params.id}, function(err, result){
+        if (err) {
+            res.json("Der er sket en fejl: " + err)
+        } else if (result.deletedCount <= 0) {
+            res.json("Der blev ikke slettet nogen Todo");
+        } else {
+            res.json("Antal slettet Todos: " + result.deletedCount);
+        }
+    }).catch(function(){
+        console.log("noget gik galt, evt med forbindelsen til DB")
+    });
+
+});
 
 app.use('/todos', todoRoutes);
 

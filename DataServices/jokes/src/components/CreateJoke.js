@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import DatePicker from 'react-date-picker'
+import DatePicker from 'react-date-picker';
+import axios from 'axios';
 
 
 export default class CreateJoke extends Component {
@@ -37,7 +38,7 @@ export default class CreateJoke extends Component {
   }
   onChangeJokeDate(date) {
     this.setState({
-      Joke_Date: date
+      Joke_Date: new Date(date)
     });
   }
 
@@ -50,6 +51,21 @@ export default class CreateJoke extends Component {
     console.log(`Joke Date: ${this.state.Joke_Date}`);
     console.log(`Joke Stars: ${this.state.Joke_Stars}`);
     console.log(`Joke Completed: ${this.state.Joke_completed}`);
+
+    const newJoke = {
+      Joke_Heading: this.state.Joke_Heading,
+      Joke_Content: this.state.Joke_Content,
+      Joke_Stars: this.state.Joke_Stars,
+      Joke_Date: this.state.Joke_Date,
+      Joke_completed: this.state.Joke_completed
+    }
+
+    axios.post('http://localhost:4000/joke/add', newJoke)
+    .then(res =>{
+      console.log(res.data)
+    });
+    
+    this.props.history.push("/");
 
     this.setState({
       Joke_Heading: "",

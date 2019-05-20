@@ -48,7 +48,7 @@ JokeRoutes.route('/add').post(function(req, res){
     });
 }); 
 
-JokeRoutes.route('/update/:id').post(function(req, res) {
+JokeRoutes.route('/update/:id').put(function(req, res) {
     Joke.findById(req.params.id, function(err, Joke){
         if (!Joke)
         res.status(404).send('Data is not found');
@@ -67,6 +67,22 @@ JokeRoutes.route('/update/:id').post(function(req, res) {
         });
     })
 })
+
+JokeRoutes.route("/delete/:id").delete(function(req, res) {
+
+    Joke.deleteOne({_id: req.params.id}, function(err, result){
+        if (err) {
+            res.json("Der er sket en fejl: " + err)
+        } else if (result.deletedCount <= 0) {
+            res.json("Der blev ikke slettet nogen Joke");
+        } else {
+            res.json("Antal slettet Jokes: " + result.deletedCount);
+        }
+    }).catch(function(){
+        console.log("noget gik galt, evt med forbindelsen til DB")
+    });
+
+});
 
 app.use('/Joke', JokeRoutes);
 

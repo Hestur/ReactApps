@@ -18,14 +18,14 @@ class App extends Component {
             <a className="navbar-brand" href="https://reddit.com" target="_blank">
               <img src={logo} width="30" height="30" alt="hest" />
             </a>
-            <Link to="/" className="navbar-brand">Todo App</Link>
+            <Link to="/" className="navbar-brand">Joke App</Link>
             <div className="collpase nav-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
-                  <Link to="/" className="nav-link">Todos</Link>
+                  <Link to="/" className="nav-link">Jokes</Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">Create Todo</Link>
+                  <Link to="/create" className="nav-link">Create Joke</Link>
                 </li>
               </ul>
             </div>
