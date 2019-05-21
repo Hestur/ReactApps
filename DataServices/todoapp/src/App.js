@@ -7,6 +7,7 @@ import EditTodo from "./components/EditTodo";
 import TodosList from "./components/TodoList";
 
 import logo from "./logo.png";
+import DeleteTodo from './components/DeleteTodo';
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
 
           <Route path="/" exact component={TodosList} />
           <Route path="/edit/:id" component={EditTodo} />
+          <Route path="/delete/:id" component={DeleteTodo} />
           <Route path="/create" component={CreateTodo} />
         </div>
       </Router>

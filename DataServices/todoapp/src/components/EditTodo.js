@@ -53,7 +53,7 @@ export default class EditTodo extends Component {
     });
   }
 
-  onChangeTodoCompleted(e) {
+  onChangeTodoCompleted() {
     this.setState({
       todo_completed: !this.state.todo_completed
     });

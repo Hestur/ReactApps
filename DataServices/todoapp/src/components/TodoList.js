@@ -18,6 +18,7 @@ const Todo = props => (
       <Link to={"/edit/" + props.todo._id}>
         <img src={Ret} width="30" height="30" alt="hest" />
       </Link>
+      <Link to={"/delete/" + props.todo._id}>Delete</Link>
     </td>
   </tr>
 );

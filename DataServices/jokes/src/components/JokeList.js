@@ -22,6 +22,7 @@ const Joke = props => (
       <Link to={"/edit/" + props.joke._id}>
         <img src={Ret} width="30" height="30" alt="hest" />
       </Link>
+      <Link to={"/delete/" + props.joke._id}>Delete</Link>
     </td>
   </tr>
 );
