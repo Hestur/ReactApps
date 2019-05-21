@@ -6,6 +6,7 @@ import CreateJoke from './components/CreateJoke';
 import EditJoke from './components/EditJoke';
 import JokeList from './components/JokeList'; 
 import logo from "./logo.png";
+import DateJoke from './components/DateJoke';
 
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
           <Route path="/" exact component={JokeList} />
           <Route path="/edit/:id" component={EditJoke} />
           <Route path="/create" component={CreateJoke} />
+          <Route path="/date" component={DateJoke} />
         </div>
       </Router>
     );

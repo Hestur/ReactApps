@@ -5,11 +5,19 @@ import Ret from "../ret.png";
 
 const Joke = props => (
   <tr>
-    <td className={props.joke.joke_completed ? 'completed' : ''}>{props.joke.joke_Heading}</td>
-    <td className={props.joke.joke_completed ? 'completed' : ''}>{props.joke.joke_Content}</td>
-    <td className={props.joke.joke_completed ? 'completed' : ''}>{props.joke.joke_Stars}</td>
-    <td className={props.joke.joke_completed ? 'completed' : ''}>{props.joke.joke_Date}</td>
-    
+    <td className={props.joke.joke_completed ? "completed" : ""}>
+      {props.joke.joke_Heading}
+    </td>
+    <td className={props.joke.joke_completed ? "completed" : ""}>
+      {props.joke.joke_Content}
+    </td>
+    <td className={props.joke.joke_completed ? "completed" : ""}>
+      {props.joke.joke_Stars}
+    </td>
+    <td className={props.joke.joke_completed ? "completed" : ""}>
+      {props.joke.joke_Date}
+    </td>
+
     <td>
       <Link to={"/edit/" + props.joke._id}>
         <img src={Ret} width="30" height="30" alt="hest" />
@@ -26,7 +34,7 @@ export default class jokesList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/joke/")
+      .get("http://localhost:4000/joke")
       .then(response => {
         this.setState({ jokes: response.data });
       })

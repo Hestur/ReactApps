@@ -1,37 +1,40 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DatePicker from 'react-date-picker';
-import { threadId } from "worker_threads";
+import DateJoke from "./DateJoke";
 
-export default class EditJoke extends Component {
+
+
+
+export default class Editjoke extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeJokeHeading = this.onChangeJokeHeading.bind(this);
-    this.onChangeJokeContent = this.onChangeJokeContent.bind(this);
-    this.onChangeJokeStars = this.onChangeJokeStars.bind(this);
-    this.onChangeJokeCompleted = this.onChangeJokeCompleted.bind(this);
+    this.onChangejokeHeading = this.onChangejokeHeading.bind(this);
+    this.onChangejokeContent = this.onChangejokeContent.bind(this);
+    this.onChangejokeStars = this.onChangejokeStars.bind(this);
+    this.onChangejokeDate = this.onChangejokeDate.bind(this);
+    this.onChangejokeCompleted = this.onChangejokeCompleted.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      Joke_Heading: "",
-      Joke_Content: "",
-      Joke_Stars: "",
-      Joke_Date: new Date(),
-      Joke_completeted: false
+      joke_Heading: "",
+      joke_Content: "",
+      joke_Stars: "",
+      joke_Date: new Date(),
+      joke_completeted: false
     };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/Jokes/" + this.props.match.params.id)
+      .get("http://localhost:4000/joke/" + this.props.match.params.id)
       .then(response => {
         this.setState({
-          Joke_Heading: response.data.Joke_Heading,
-          Joke_Content: response.data.Joke_Content,
-          Joke_Stars: response.data.Joke_Stars,
-          Joke_Date: response.data.Joke_Date,
-          Joke_completed: response.data.Joke_completed
+          joke_Heading: response.data.joke_Heading,
+          joke_Content: response.data.joke_Content,
+          joke_Stars: response.data.joke_Stars,
+          joke_Date: response.data.joke_Date,
+          joke_completed: response.data.joke_completed
         });
       })
       .catch(function(error) {
@@ -39,48 +42,48 @@ export default class EditJoke extends Component {
       });
   }
 
-  onChangeJokeHeading(e) {
+  onChangejokeHeading(e) {
     this.setState({
-      Joke_Heading: e.target.value
+      joke_Heading: e.target.value
     });
   }
 
-  onChangeJokeContent(e) {
+  onChangejokeContent(e) {
     this.setState({
-      Joke_Content: e.target.value
+      joke_Content: e.target.value
     });
   }
 
-  onChangeJokeStars(e) {
+  onChangejokeStars(e) {
     this.setState({
-      Joke_Stars: e.target.value
+      joke_Stars: e.target.value
     });
   }
 
-  onChangeJokeCompleted(e) {
+  onChangejokeCompleted(e) {
     this.setState({
-      Joke_completed: !this.state.Joke_completed
+      joke_completed: !this.state.joke_completed
     });
   }
-  onChangeJokeDate(e){
-    this.setState({
-      Joke_Date: new Date().toLocaleString()
-    });
-  }
+   onChangejokeDate(date){
+     this.setState({
+       joke_Date: date
+     });
+   }
 
   onSubmit(e) {
     e.preventDefault();
     const obj = {
-      Joke_Heading: this.state.Joke_Heading,
-      Joke_Content: this.state.Joke_Content,
-      Joke_Stars: this.state.Joke_Stars,
-      Joke_Date: this.state.Joke_Date,
-      Joke_completed: this.state.Joke_completed
+      joke_Heading: this.state.joke_Heading,
+      joke_Content: this.state.joke_Content,
+      joke_Stars: this.state.joke_Stars,
+      joke_Date: this.state.joke_Date,
+      joke_completed: this.state.joke_completed
     };
     console.log(obj)
     axios
       .put(
-        "http://localhost:4000/Jokes/update/" + this.props.match.params.id,
+        "http://localhost:4000/joke/update/" + this.props.match.params.id,
         obj
       )
       .then(res => console.log(res.data));
@@ -91,15 +94,15 @@ export default class EditJoke extends Component {
   render() {
     return (
       <div>
-        <h3>Update Joke</h3>
+        <h3>Update joke</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Heading: </label>
             <input
               type="text"
               className="form-control"
-              value={this.state.Joke_Heading}
-              onChange={this.onChangeJokeHeading}
+              value={this.state.joke_Heading}
+              onChange={this.onChangejokeHeading}
             />
           </div>
           <div className="form-group">
@@ -107,8 +110,8 @@ export default class EditJoke extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.Joke_Content}
-              onChange={this.onChangeJokeContent}
+              value={this.state.joke_Content}
+              onChange={this.onChangejokeContent}
             />
           </div>
           <div className="form-group">
@@ -119,8 +122,8 @@ export default class EditJoke extends Component {
                 name="StarsOptions"
                 id="StarsLow"
                 value="Low"
-                checked={this.state.Joke_Stars === "Low"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "Low"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">Low</label>
             </div>
@@ -131,8 +134,8 @@ export default class EditJoke extends Component {
                 name="StarsOptions"
                 id="StarsMedium"
                 value="Medium"
-                checked={this.state.Joke_Stars === "Medium"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "Medium"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">Medium</label>
             </div>
@@ -143,8 +146,8 @@ export default class EditJoke extends Component {
                 name="StarsOptions"
                 id="StarsHigh"
                 value="High"
-                checked={this.state.Joke_Stars === "High"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "High"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">High</label>
             </div>
@@ -154,22 +157,25 @@ export default class EditJoke extends Component {
                 className="form-check-input"
                 id="completedCheckbox"
                 name="completedCheckbox"
-                onChange={this.onChangeJokeCompleted}
-                checked={this.state.Joke_completed}
+                onChange={this.onChangejokeCompleted}
+                checked={this.state.joke_completed}
               />
               <label className="form-check-label" htmlFor="completedCheckbox">
                 Completed
               </label>
             </div>
             <div className="form-group">
-              <DatePicker
-              onChange={this.onChangeJokeDate} value={this.state.date} />
+            
+            <DateJoke/>
+            <span>Format: DD/MM/YYYY</span>
             </div>
+
+
             <br />
             <div className="form-group">
               <input
                 type="submit"
-                value="Update Joke"
+                value="Update joke"
                 className="btn btn-primary"
               />
             </div>

@@ -1,44 +1,43 @@
 import React, { Component } from "react";
-import DatePicker from 'react-date-picker';
-import axios from 'axios';
+import axios from "axios";
+import DateJoke from "./DateJoke";
 
-
-export default class CreateJoke extends Component {
+export default class Createjoke extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeJokeHeading = this.onChangeJokeHeading.bind(this);
-    this.onChangeJokeContent = this.onChangeJokeContent.bind(this);
-    this.onChangeJokeStars = this.onChangeJokeStars.bind(this);
-    this.onChangeJokeDate = this.onChangeJokeDate.bind(this);
+    this.onChangejokeHeading = this.onChangejokeHeading.bind(this);
+    this.onChangejokeContent = this.onChangejokeContent.bind(this);
+    this.onChangejokeStars = this.onChangejokeStars.bind(this);
+    this.onChangejokeDate = this.onChangejokeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      Joke_Heading: "",
-      Joke_Content: "",
-      Joke_Stars: "",
-      Joke_Date: new Date(),
-      Joke_completeted: false
+      joke_Heading: "",
+      joke_Content: "",
+      joke_Stars: "",
+      joke_Date: new Date(),
+      joke_completeted: false
     };
   }
-  onChangeJokeHeading(e) {
+  onChangejokeHeading(e) {
     this.setState({
-      Joke_Heading: e.target.value
+      joke_Heading: e.target.value
     });
   }
-  onChangeJokeContent(e) {
+  onChangejokeContent(e) {
     this.setState({
-      Joke_Content: e.target.value
+      joke_Content: e.target.value
     });
   }
-  onChangeJokeStars(e) {
+  onChangejokeStars(e) {
     this.setState({
-      Joke_Stars: e.target.value
+      joke_Stars: e.target.value
     });
   }
-  onChangeJokeDate(date) {
+  onChangejokeDate(date) {
     this.setState({
-      Joke_Date: new Date(date)
+      joke_Date: date
     });
   }
 
@@ -46,48 +45,47 @@ export default class CreateJoke extends Component {
     e.preventDefault();
 
     console.log(`Form submitted:`);
-    console.log(`Joke Heading: ${this.state.Joke_Heading}`);
-    console.log(`Joke Content: ${this.state.Joke_Content}`);
-    console.log(`Joke Date: ${this.state.Joke_Date}`);
-    console.log(`Joke Stars: ${this.state.Joke_Stars}`);
-    console.log(`Joke Completed: ${this.state.Joke_completed}`);
+    console.log(`joke Heading: ${this.state.joke_Heading}`);
+    console.log(`joke Content: ${this.state.joke_Content}`);
+    console.log(`joke Date: ${this.state.joke_Date}`);
+    console.log(`joke Stars: ${this.state.joke_Stars}`);
+    console.log(`joke Completed: ${this.state.joke_completed}`);
+    console.log(this.state.joke_Date + "gg");
+    const newjoke = {
+      joke_Heading: this.state.joke_Heading,
+      joke_Content: this.state.joke_Content,
+      joke_Stars: this.state.joke_Stars,
+      joke_Date: this.state.joke_Date,
+      joke_completed: this.state.joke_completed
+    };
 
-    const newJoke = {
-      Joke_Heading: this.state.Joke_Heading,
-      Joke_Content: this.state.Joke_Content,
-      Joke_Stars: this.state.Joke_Stars,
-      Joke_Date: this.state.Joke_Date,
-      Joke_completed: this.state.Joke_completed
-    }
-
-    axios.post('http://localhost:4000/joke/add', newJoke)
-    .then(res =>{
-      console.log(res.data)
+    axios.post("http://localhost:4000/joke/add", newjoke).then(res => {
+      console.log(res.data);
     });
-    
+
     this.props.history.push("/");
 
     this.setState({
-      Joke_Heading: "",
-      Joke_Content: "",
-      Joke_Stars: "",
-      Joke_Date: "",
-      Joke_completeted: false
+      joke_Heading: "",
+      joke_Content: "",
+      joke_Stars: "",
+      joke_Date: "",
+      joke_completeted: false
     });
   }
 
   render() {
     return (
       <div style={{ marginTop: 10 }}>
-        <h3>Create New Joke</h3>
+        <h3>Create New joke</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Heading: </label>
             <input
               type="text"
               className="form-control"
-              value={this.state.Joke_Heading}
-              onChange={this.onChangeJokeHeading}
+              value={this.state.joke_Heading}
+              onChange={this.onChangejokeHeading}
             />
           </div>
           <div className="form-group">
@@ -95,8 +93,8 @@ export default class CreateJoke extends Component {
             <input
               type="text"
               className="form-control"
-              value={this.state.Joke_Content}
-              onChange={this.onChangeJokeContent}
+              value={this.state.joke_Content}
+              onChange={this.onChangejokeContent}
             />
           </div>
           <div className="form-group">
@@ -107,8 +105,8 @@ export default class CreateJoke extends Component {
                 name="StarsOptions"
                 id="Stars1"
                 value="1"
-                checked={this.state.Joke_Stars === "1"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "1"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">1 star</label>
             </div>
@@ -120,8 +118,8 @@ export default class CreateJoke extends Component {
                 name="StarsOptions"
                 id="Stars2"
                 value="2"
-                checked={this.state.Joke_Stars === "2"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "2"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">2 stars</label>
             </div>
@@ -133,8 +131,8 @@ export default class CreateJoke extends Component {
                 name="StarsOptions"
                 id="Stars3"
                 value="3"
-                checked={this.state.Joke_Stars === "3"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "3"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">3 stars</label>
             </div>
@@ -146,8 +144,8 @@ export default class CreateJoke extends Component {
                 name="StarsOptions"
                 id="Stars4"
                 value="4"
-                checked={this.state.Joke_Stars === "4"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "4"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">4 stars</label>
             </div>
@@ -159,21 +157,25 @@ export default class CreateJoke extends Component {
                 name="StarsOptions"
                 id="Stars5"
                 value="5"
-                checked={this.state.Joke_Stars === "5"}
-                onChange={this.onChangeJokeStars}
+                checked={this.state.joke_Stars === "5"}
+                onChange={this.onChangejokeStars}
               />
               <label className="form-check-label">5 stars</label>
             </div>
-
-            <div className="form-group">
-              <DatePicker
-              onChange={this.onChangeJokeDate} value={this.state.date} />
-            </div>
           </div>
+          <div className="form-group">
+            <DateJoke
+              value={this.state.date}
+              selected={this.state.date}
+              handleChange={this.onChangejokeDate}
+            />
+            <span>Format: DD/MM/YYYY</span>
+          </div>
+          
           <div className="form-group">
             <input
               type="submit"
-              value="Create Joke"
+              value="Create joke"
               className="btn btn-primary"
             />
           </div>
