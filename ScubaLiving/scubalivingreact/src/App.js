@@ -8,7 +8,9 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Travel from './Travel/Travel';
 import Education from './Education/Education';
 import Contact from './Contact/Contact';
-import Feedback from '/Feedback/Feedback'
+import FeedbacksList from './Feedback/Feedback';
+
+
 
 class App extends Component {
   render() {
@@ -21,7 +23,7 @@ class App extends Component {
 <Route path="/shop" component={Shop}/>
 <Route path="/travel" component={Travel}/>
 <Route path="/education" component={Education}/>
-<Route path="/feedback" component={Feedback}/>
+<Route path="/feedback" component={FeedbacksList}/>
 <Route path="/contact" component={Contact}/>
 <AppFooter />
 </BrowserRouter>
