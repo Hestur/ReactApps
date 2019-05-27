@@ -17,7 +17,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).array('file')
 
 app.post('/upload',function(req, res) {
-    console.log('req body' + req.body)
+    console.log('req body: ' + req.body)
      
     upload(req, res, function (err) {
            if (err instanceof multer.MulterError) {
@@ -26,7 +26,6 @@ app.post('/upload',function(req, res) {
                return res.status(500).json(err)
            }
       return res.status(200).send(req.file)
-
     })
 
 });
