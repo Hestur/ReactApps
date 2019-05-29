@@ -35,8 +35,8 @@ class App extends Component {
 
   maxSelectFile=(event)=>{
     let files = event.target.files // create file object
-        if (files.length > 3) { 
-           const msg = 'Only 3 images can be uploaded at a time'
+        if (files.length > 10) { 
+           const msg = 'Only 10 images can be uploaded at a time'
            event.target.value = null // discard selected file
            console.log(msg)
           return false;
