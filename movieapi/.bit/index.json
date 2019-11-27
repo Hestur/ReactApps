@@ -1,0 +1,50 @@
+[
+  {
+    "id": {
+      "scope": null,
+      "name": "components"
+    },
+    "isSymlink": true,
+    "hash": "c212f08ed1157ae268fd83d142afd5ccd48664b2"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "home"
+    },
+    "isSymlink": true,
+    "hash": "e83249bd3ba79932e16fb1fb5100dafade9954c2"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "navbar"
+    },
+    "isSymlink": true,
+    "hash": "c63e3c1cfa2ff651ad4cfadea3e21265ffcf8ca3"
+  },
+  {
+    "id": {
+      "scope": "hesten.components",
+      "name": "components"
+    },
+    "isSymlink": false,
+    "hash": "ee594aa60d5bfe68d06cbad90bb160d6093ca389"
+  },
+  {
+    "id": {
+      "scope": "hesten.components",
+      "name": "home"
+    },
+    "isSymlink": false,
+    "hash": "b378963b552ac2e2ac226217e9d7232ab9e70ff0"
+  },
+  {
+    "id": {
+      "scope": "hesten.components",
+      "name": "navbar"
+    },
+    "isSymlink": false,
+    "hash": "0738ecab92bdfbe468e6362e4551e1818825831e"
+  }
+]

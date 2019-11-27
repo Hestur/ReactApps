@@ -3,11 +3,13 @@ import Gif2 from "../Gif/Gif2";
 import Gif1 from "../Gif/Gif1";
 import Gif3 from "../Gif/Gif3";
 import Video from "../Video/Video";
+import Map from "./Map/Map";
 
 class Contact extends Component {
   render() {
     return (
       <main className="main">
+        <Map />
         <Gif1 />
         <Gif2 />
         <Gif3 />
